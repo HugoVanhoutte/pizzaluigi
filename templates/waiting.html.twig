@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Luigi's Pizza | Bientôt disponible!
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/waiting.css') }}">
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block body %}
+    <img src="{{ asset('images/logo.png') }}" alt="Logo">
+    <h1>Bien plus qu'un restaurant italien</h1>
+
+    <h2>Arrive dans : </h2>
+
+    <p><b id="days"></b> Jours</p>
+    <p><b id="hours"></b> Heures</p>
+    <p><b id="minutes"></b> Minutes</p>
+    <p><b id="seconds"></b> Secondes</p>
+    <script src="{{ asset('js/waiting.js') }}"></script>
+
+{% endblock %}

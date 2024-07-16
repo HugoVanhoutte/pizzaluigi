@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Luigi's Pizza | Accueil
+{% endblock %}
+
+{% block body %}
+    <section id="history">
+        <main>
+            <h1>Luigi's Pizza</h1>
+            <h2>Plus qu'un restaurant italien</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie bibendum nisi, at semper urna vestibulum et. Nullam nec placerat metus. Curabitur fringilla luctus tincidunt. Mauris rhoncus mattis nisi, id suscipit nisi commodo non. Sed sed nibh libero. Suspendisse dolor quam, facilisis sit amet volutpat nec, mattis ac sapien. Ut cursus ullamcorper accumsan. Aliquam fermentum eget metus nec pellentesque.</p>
+        </main>
+    </section>
+
+    <section id="news">
+        <h3>Nouveautés</h3>
+
+        <div id="news-list">
+            <article class="card">
+                <img src="{{ asset('images/history-background.jpg') }}" alt="image">
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie bibendum nisi, at semper urna vestibulum et. Nullam nec placerat metus. Curabitur fringilla luctus tincidunt.</p>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="{{ asset('images/history-background.jpg') }}" alt="image">
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie bibendum nisi, at semper urna vestibulum et. Nullam nec placerat metus. Curabitur fringilla luctus tincidunt.</p>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="{{ asset('images/history-background.jpg') }}" alt="image">
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie bibendum nisi, at semper urna vestibulum et. Nullam nec placerat metus. Curabitur fringilla luctus tincidunt.</p>
+                </div>
+            </article>
+        </div>
+
+        <a class="button-primary" href="#">
+            Voir tout
+        </a>
+    </section>
+
+    <section id="notes">
+
+    </section>
+
+{% endblock %}
