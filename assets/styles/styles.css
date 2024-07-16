@@ -39,6 +39,7 @@ a:hover {
     box-shadow: 3px 3px 3px #8a8a8a;
 }
 
+
 .card::webkit-scrollbar {
     display: none;
 }
@@ -61,7 +62,7 @@ section#history {
     display: flex;
     flex-direction: row;
 
-    background-image: url("../images/history-background.jpg");
+    background-image: url("../../public/images/history-background.jpg");
     background-size:cover;
 
     /*box-shadow: used as a semi-transparent layer on top of background-image*/

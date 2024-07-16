@@ -7,7 +7,11 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 }
 
 Encore
-    .enablePostCssLoader()
+    .enablePostCssLoader((options) => {
+        options.postcssOptions = {
+            config: './postcss.config.js'
+        }
+    })
     // directory where compiled assets will be stored
     .setOutputPath('public/build/')
     // public path used by the web server to access the output path

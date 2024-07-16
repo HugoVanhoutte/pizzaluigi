@@ -1,14 +1,16 @@
-<header>
-    <img src="{{ asset('images/logo.png') }}" alt="">
-    <nav>
-        <a href="#">Menu</a>
-        <a href="#">Avis</a>
-        <a href="#">Réservation</a>
+<header class="bg-dark text-gold flex flex-row justify-between items-center">
+    <div class="w-20 h-auto mt-2 mb-2 ml-2">
+        <img src="{{ asset('images/logo.png') }}" alt="logo" class="size-full">
+    </div>
+    <nav class="flex flex-row w-4/12 justify-between items-center me-10">
+        <a href="#" class="hover:decoration-1 hover:underline">Menu</a>
+        <a href="#" class="hover:decoration-1 hover:underline">Avis</a>
+        <a href="#" class="hover:decoration-1 hover:underline">Réservation</a>
     </nav>
-
+<!--
     <a id="nav-button">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 18L20 18" stroke="#C5AB6B" stroke-width="2" stroke-linecap="round"></path> <path d="M4 12L20 12" stroke="#C5AB6B" stroke-width="2" stroke-linecap="round"></path> <path d="M4 6L20 6" stroke="#C5AB6B" stroke-width="2" stroke-linecap="round"></path> </g></svg>
     </a>
+-->
 </header>
-
 <script src="{{ asset('js/burger-menu.js') }}"></script>

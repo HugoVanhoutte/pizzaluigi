@@ -5,12 +5,11 @@
         <meta charset="UTF-8">
         <title>{% block title %}Luigi's Pizza{% endblock %}</title>
         <link rel="icon" href="{{ asset('images/logo.png') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quintessential&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rouge+Script&display=swap" rel="stylesheet">
         {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
-            <link rel="stylesheet" href="{{ asset('css/header.css') }}">
-            <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
-            <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-            {{ encore_entry_link_tags('app') }}
+            <link rel="stylesheet" href="{{ asset('build/app.css') }}">
         {% endblock %}
 
         {% block javascripts %}

@@ -1,11 +1,23 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-      "./public/css/*.css",
-      "./public/js/*.js",
+      "./assets/**/*.js",
+      "./templates/**/*.{html,twig}",
   ],
   theme: {
-    extend: {},
+    extend: {
+        colors: {
+            'gold': '#C5AB6B',
+            'light': '#FFFCF3',
+            'dark': '#1A1C20',
+        },
+
+        fontFamily: {
+          'title': 'Rouge Script, cursive',
+          'sub-title': 'Quintessential, serif',
+          'text': 'Raleway, sans-serif',
+        }
+    },
   },
   plugins: [],
 }

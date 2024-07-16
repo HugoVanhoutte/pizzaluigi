@@ -23,4 +23,12 @@ public function waiting(): Response
             'controller_name' => 'HomeController',
         ]);
     }
+
+    #[Route('/menu', name: 'app_menu')]
+public function menu(): Response
+    {
+        return $this->render('menu.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
+    }
 }
