@@ -31,4 +31,28 @@ public function menu(): Response
             'controller_name' => 'HomeController',
         ]);
     }
+
+    #[Route('/booking', name: 'app_booking')]
+public function booking(): Response
+    {
+        return $this->render('booking.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
+    }
+
+    #[Route('/notes', name: 'app_notes')]
+public function notes(): Response
+    {
+        return $this->render('notes.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
+    }
+
+    #[Route('/admin', name: 'app_admin')]
+    public function admin(): Response
+    {
+        return $this->render('admin.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
+    }
 }

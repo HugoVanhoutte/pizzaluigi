@@ -10,8 +10,8 @@ import './styles/app.css';
 /*
 import './styles/styles.css';
 import './styles/reset.css';
-import './styles/header.css';
-import './styles/footer.css';
+import './styles/header.css.archived';
+import './styles/footer.css.archived';
 import './styles/waiting.css';
 */
 // start the Stimulus application

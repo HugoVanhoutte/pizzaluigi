@@ -1,8 +1,8 @@
 <footer class="bg-dark text-gold font-text flex flex-col md:flex-row justify-between items-center">
 
-    <div class="w-20 h-auto mt-2 mb-2 ml-2">
+    <a class="w-20 h-auto mt-2 mb-2 ml-2" href="{{ path('app_landing') }}">
         <img src="{{ asset('images/logo.png') }}" alt="logo" class="size-full">
-    </div>
+    </a>
 
     <ul id="contact" class="flex flex-col items-center mb-4 md:m-0">
         <li>06 06 06 06 06</li>
@@ -18,7 +18,7 @@
     </div>
 
     <ul id="links" class="flex flex-col md:items-end md:me-2 items-center m-0">
-        <li><a href="#">Informations légales</a></li>
-        <li><a href="#">copyright</a></li>
+        <li class="hover:decoration-1 hover:underline"><a href="#">Informations légales</a></li>
+        <li class="hover:decoration-1 hover:underline"><a href="#">copyright</a></li>
     </ul>
 </footer>

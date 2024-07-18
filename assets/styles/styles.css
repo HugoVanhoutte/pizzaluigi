@@ -27,14 +27,14 @@ a:hover {
     text-decoration: underline;
 }
 
-.card {
+/*.card {
     background-color: var(--gold);
     border-radius: 15px;
     overflow: scroll;
 
-    /* Hides scrollbar for IE, Edge and Firefox */
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    !* Hides scrollbar for IE, Edge and Firefox *!
+    -ms-overflow-style: none;  !* IE and Edge *!
+    scrollbar-width: none;  !* Firefox *!
 
     box-shadow: 3px 3px 3px #8a8a8a;
 }
@@ -42,8 +42,7 @@ a:hover {
 
 .card::webkit-scrollbar {
     display: none;
-}
-
+}*/
 .button-primary {
     display: block;
 

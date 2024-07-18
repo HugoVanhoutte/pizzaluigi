@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quintessential&family=Rouge+Script&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @font-face{
     font-family: 'Digital Clock';
-    src: url('../../public/fonts/DS-DIGIB.TTF')
+    src: url('../fonts/DS-DIGIB.TTF')
 }
 
 :root {

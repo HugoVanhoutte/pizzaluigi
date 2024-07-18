@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% set today = "now"|date("Y-m-d") %}
+
+{% block body %}
+<form action="{# TODO #}" method="post" id="container" class="flex flex-col justify-center items-center w-full bg-light">
+
+    <div id="title-container" class="text-gold bg-dark h-16 w-full">
+        <h1 class="font-title text-6xl text-center">Réservation</h1>
+    </div>
+
+    <label for="name" class="font-sub-title text-dark text-3xl">Nom</label>
+    <input type="text" max="25" id="name" class="m-3 border border-dark rounded-full p-2">
+
+    <label for="phone" class="font-sub-title text-dark text-3xl">Numéro de téléphone</label>
+    <input type="tel" id="phone" class="m-3 border border-dark rounded-full p-2">
+
+    <label for="email" class="font-sub-title text-dark text-3xl">Adresse mail</label>
+    <input type="email" id="email" class="m-3 border border-dark rounded-full p-2">
+
+    <label for="booking-date" class="font-sub-title text-dark text-3xl">Date de réservation</label>
+    <input type="date" id="booking-date" class="m-3 border border-dark rounded-full p-2" min="{{ today }}" value="{{ today }}">
+
+    <label for="guest-nb" class="font-sub-title text-dark text-3xl">Nombre de personnes</label>
+    <input type="number" id="guest-nb" class="m-3 border border-dark rounded-full p-2" min="1" max="16" value="1">
+
+    <label for="time" class="font-sub-title text-dark text-3xl">Heure d'arrivé</label>
+    <input type="time" id="time" min="11:30" max="22:00" step="1800" list="list-time" class="m-3 border border-dark rounded-full p-2">
+    <datalist id="list-time">
+        <option value="11:30">11h30</option>
+        <option value="12:00">12h</option>
+        <option value="12:30">12h30</option>
+        <option value="13:00">13h</option>
+        <option value="13:30">13h30</option>
+        <option value="14:00">14h</option>
+        <option value="14:30">14h30</option>
+        <option value="15:00">15h</option>
+        <option value="15:30">15h30</option>
+        <option value="16:00">16h</option>
+        <option value="16:30">16h30</option>
+        <option value="17:00">17h</option>
+        <option value="17:30">17h30</option>
+        <option value="18:00">18h</option>
+        <option value="18:30">18h30</option>
+        <option value="19:00">19h</option>
+        <option value="19:30">19h30</option>
+        <option value="20:00">20h</option>
+        <option value="20:30">20h30</option>
+        <option value="21:00">21h</option>
+        <option value="21:30">21h30</option>
+        <option value="22:00">22h</option>
+        <option value="22:30">22h30</option>
+        <option value="23:00">23h</option>
+        <option value="23:30">23h30</option>
+    </datalist>
+
+    <input type="submit" value="Réserver" class="block bg-dark rounded-full p-4 pb-5 m-1 font-bold text-gold text-3xl hover:underline text-center w-52">
+</form>
+
+
+{% endblock %}
