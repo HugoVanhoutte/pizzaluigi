@@ -5,33 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3b2c532-9b04-4ead-a1e2-ae5a4cb05903" name="Changes" comment="start back">
-      <change afterPath="$PROJECT_DIR$/config/packages/knp-paninator.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/posts_menu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/bookings.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/notes.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/partials/_menu.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/partials/posts_menu.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/posts_create.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/posts_read.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/partials/pagination/tailwindcss_pagination.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pizzaluigi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pizzaluigi.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/framework.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/framework.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Booking.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Booking.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/booking.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/booking.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Note.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Review.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/NoteRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ReviewRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/notes.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/reviews.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/partials/_menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/partials/_menu.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/landing.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/notes.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/notes.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/waiting.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/waiting.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/notes.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reviews.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partials/_header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/_header.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -280,7 +266,7 @@
       <workItem from="1721284466444" duration="17680000" />
       <workItem from="1721309106499" duration="2780000" />
       <workItem from="1721630615741" duration="21745000" />
-      <workItem from="1721716605709" duration="1979000" />
+      <workItem from="1721716605709" duration="4764000" />
     </task>
     <task id="LOCAL-00001" summary="Added inital pages">
       <option name="closed" value="true" />
@@ -322,7 +308,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721294562927</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="start back">
+      <option name="closed" value="true" />
+      <created>1721719561212</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1721719561212</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

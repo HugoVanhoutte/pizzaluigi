@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\NoteRepository;
+use App\Repository\ReviewRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
-#[ORM\Entity(repositoryClass: NoteRepository::class)]
-class Note
+#[ORM\Entity(repositoryClass: ReviewRepository::class)]
+class Review
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]

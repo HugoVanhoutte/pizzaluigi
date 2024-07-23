@@ -3,7 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Booking;
-use App\Entity\Note;
+use App\Entity\Review;
 use App\Entity\Post;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -26,7 +26,7 @@ class AppFixtures extends Fixture
             $booking
                 ->setName($this->faker->name())
                 ->setGuests(mt_rand(1, 16))
-                ->setDatetime($this->faker->dateTimeBetween( 'now', '+1 week'))
+                ->setDatetime($this->faker->dateTimeBetween( 'now', '+1 month'))
                 ->setPhone($this->faker->phoneNumber())
                 ->setEmail($this->faker->email())
             ;
@@ -35,13 +35,13 @@ class AppFixtures extends Fixture
         }
 
         for ($i = 1; $i < 500; $i++) {
-            $note = new Note();
-            $note
+            $review = new Review();
+            $review
                 ->setName($this->faker->name())
                 ->setContent($this->faker->paragraph())
                 ->setNote(mt_rand(1, 5))
                 ;
-            $manager->persist($note);
+            $manager->persist($review);
         }
 
         for ($i = 1; $i < 500; $i++) {
