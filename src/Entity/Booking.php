@@ -5,6 +5,8 @@ namespace App\Entity;
 use App\Repository\BookingRepository;
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 #[ORM\Entity(repositoryClass: BookingRepository::class)]
 class Booking
 {
@@ -14,28 +16,49 @@ class Booking
     private ?int $id = null;
 
     #[ORM\Column]
-    private ?\DateTimeImmutable $datetime = null;
+    private ?\DateTime $datetime = null;
 
-    #[ORM\Column(length: 25)]
+    #[ORM\Column(type: 'string', length: 25)]
+    #[Assert\NotBlank(
+        message: 'Champs obligatoire',
+    )]
+    #[Assert\Length(min: 2, max: 25)]
     private ?string $name = null;
 
     #[ORM\Column(length: 50)]
+    #[Assert\NotBlank(
+        message: 'Champs obligatoire',
+    )]
+    #[Assert\Email(
+        message: 'Please enter a valid email address',
+    )]
     private ?string $email = null;
 
     #[ORM\Column(length: 15)]
+    #[Assert\NotBlank(
+        message: 'Champs obligatoire',
+    )]
     private ?string $phone = null;
+
+    #[ORM\Column]
+    #[Assert\NotBlank(
+        message: 'Champs obligatoire',
+    )]
+    #[Assert\LessThan(16)]
+    #[Assert\Positive]
+    private ?int $guests = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getDatetime(): ?\DateTimeImmutable
+    public function getDatetime(): ?\DateTime
     {
         return $this->datetime;
     }
 
-    public function setDatetime(\DateTimeImmutable $datetime): static
+    public function setDatetime(\DateTime $datetime): static
     {
         $this->datetime = $datetime;
 
@@ -74,6 +97,18 @@ class Booking
     public function setPhone(string $phone): static
     {
         $this->phone = $phone;
+
+        return $this;
+    }
+
+    public function getGuests(): ?int
+    {
+        return $this->guests;
+    }
+
+    public function setGuests(int $guests): static
+    {
+        $this->guests = $guests;
 
         return $this;
     }

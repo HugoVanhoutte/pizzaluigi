@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Luigi's Pizza | Administration - Nouveautés
+{% endblock %}
+
+{% block body %}
+<div id="container" class="flex flex-col">
+    {% include 'admin/partials/_menu.html.twig' %}
+    {% include 'admin/partials/posts_menu.html.twig' %}
+
+    <form action="{# TODO #}" method="post" class="flex flex-col justify-center items-center w-full bg-light">
+        <label for="title" class="form-label">Titre</label>
+        <input type="text" id="title" max="50" class="form-input">
+
+        <label for="content" class="form-label">Contenu</label>
+        <textarea name="content" id="content" cols="50" rows="10" class="form-input"></textarea>
+
+        <label for="picture" class="form-label">Image</label>
+        <input type="file" accept="image/*" class="form-input">
+
+        <input type="submit" value="Publier" class="button">
+    </form>
+</div>
+{% endblock %}

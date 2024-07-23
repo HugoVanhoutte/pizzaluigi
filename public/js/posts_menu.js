@@ -1,8 +1,7 @@
 //Whole file starts after DOM is loaded to ensure that buttons are loaded.
 document.addEventListener('DOMContentLoaded', (event) => {
-    let bookingButton = document.querySelector('#booking-button');
-    let newsButton = document.querySelector('#news-button');
-    let notesButton = document.querySelector('#notes-button');
+    let createButton = document.querySelector('#create');
+    let readButton = document.querySelector('#read');
     let pageName = window.location.href
 
     let pageNameStart = pageName.lastIndexOf('/') + 1
@@ -13,26 +12,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     pageName = pageName.slice(pageNameStart, pageNameEnd)
 
-    console.log(pageName)
-
     //Switches active state on buttons on page loading
     switch (pageName) {
-        case 'bookings': {
-            bookingButton.classList.add('active');
+        case 'create': {
+            createButton.classList.add('active');
             break;
         }
         case 'read': {
-            newsButton.classList.add('active');
+            readButton.classList.add('active');
             break;
         }
-        case 'create': {
-            newsButton.classList.add('active');
-            break;
-        }
-        case 'notes': {
-            notesButton.classList.add('active');
-            break;
-        }
+
         default: break;
     }
 })

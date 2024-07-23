@@ -2,7 +2,11 @@
 
 namespace App\Controller;
 
+use App\Repository\BookingRepository;
+use App\Repository\NoteRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -41,18 +45,17 @@ public function booking(): Response
     }
 
     #[Route('/notes', name: 'app_notes')]
-public function notes(): Response
+public function notes(NoteRepository $noteRepository, PaginatorInterface $paginator, Request $request): Response
     {
+        $notes = $paginator->paginate(
+            $noteRepository->findAll(),
+            $request->query->getInt('page', 1),
+            50
+        );
         return $this->render('notes.html.twig', [
             'controller_name' => 'HomeController',
+            'notes' => $notes,
         ]);
     }
 
-    #[Route('/admin', name: 'app_admin')]
-    public function admin(): Response
-    {
-        return $this->render('admin.html.twig', [
-            'controller_name' => 'HomeController',
-        ]);
-    }
 }

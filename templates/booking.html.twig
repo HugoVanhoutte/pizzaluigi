@@ -9,23 +9,23 @@
         <h1 class="font-title text-6xl text-center">Réservation</h1>
     </div>
 
-    <label for="name" class="font-sub-title text-dark text-3xl">Nom</label>
-    <input type="text" max="25" id="name" class="m-3 border border-dark rounded-full p-2">
+    <label for="name" class="form-label">Nom</label>
+    <input type="text" max="25" id="name" class="form-input">
 
     <label for="phone" class="font-sub-title text-dark text-3xl">Numéro de téléphone</label>
-    <input type="tel" id="phone" class="m-3 border border-dark rounded-full p-2">
+    <input type="tel" id="phone" class="form-input">
 
-    <label for="email" class="font-sub-title text-dark text-3xl">Adresse mail</label>
-    <input type="email" id="email" class="m-3 border border-dark rounded-full p-2">
+    <label for="email" class="form-label">Adresse mail</label>
+    <input type="email" id="email" class="form-input">
 
-    <label for="booking-date" class="font-sub-title text-dark text-3xl">Date de réservation</label>
-    <input type="date" id="booking-date" class="m-3 border border-dark rounded-full p-2" min="{{ today }}" value="{{ today }}">
+    <label for="booking-date" class="form-label">Date de réservation</label>
+    <input type="date" id="booking-date" class="form-input" min="{{ today }}" value="{{ today }}">
 
-    <label for="guest-nb" class="font-sub-title text-dark text-3xl">Nombre de personnes</label>
-    <input type="number" id="guest-nb" class="m-3 border border-dark rounded-full p-2" min="1" max="16" value="1">
+    <label for="guest-nb" class="form-label">Nombre de personnes</label>
+    <input type="number" id="guest-nb" class="form-input" min="1" max="16" value="1">
 
-    <label for="time" class="font-sub-title text-dark text-3xl">Heure d'arrivé</label>
-    <input type="time" id="time" min="11:30" max="22:00" step="1800" list="list-time" class="m-3 border border-dark rounded-full p-2">
+    <label for="time" class="form-label">Heure d'arrivé</label>
+    <input type="time" id="time" min="11:30" max="22:00" step="1800" list="list-time" class="form-input">
     <datalist id="list-time">
         <option value="11:30">11h30</option>
         <option value="12:00">12h</option>
@@ -54,7 +54,7 @@
         <option value="23:30">23h30</option>
     </datalist>
 
-    <input type="submit" value="Réserver" class="block bg-dark rounded-full p-4 pb-5 m-1 font-bold text-gold text-3xl hover:underline text-center w-52">
+    <input type="submit" value="Réserver" class="button">
 </form>
 
 
