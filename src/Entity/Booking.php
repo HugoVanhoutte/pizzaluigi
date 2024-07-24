@@ -16,6 +16,7 @@ class Booking
     private ?int $id = null;
 
     #[ORM\Column]
+    #[Assert\NotBlank]
     private ?\DateTime $datetime = null;
 
     #[ORM\Column(type: 'string', length: 25)]
@@ -23,6 +24,7 @@ class Booking
         message: 'Champs obligatoire',
     )]
     #[Assert\Length(min: 2, max: 25)]
+    #[Assert\Type(type: 'alpha')]
     private ?string $name = null;
 
     #[ORM\Column(length: 50)]
@@ -30,7 +32,7 @@ class Booking
         message: 'Champs obligatoire',
     )]
     #[Assert\Email(
-        message: 'Please enter a valid email address',
+        message: 'Veuillez enter une adresse e-mail valide',
     )]
     private ?string $email = null;
 
@@ -38,6 +40,7 @@ class Booking
     #[Assert\NotBlank(
         message: 'Champs obligatoire',
     )]
+    #[Assert\Type(type: 'digit')]
     private ?string $phone = null;
 
     #[ORM\Column]

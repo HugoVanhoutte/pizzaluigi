@@ -8,12 +8,12 @@
 }
 
 @layer base {
-    #container {
+    #container, .container {
         @apply flex flex-col justify-center items-center w-full bg-light
     }
 
     .card {
-        @apply bg-gold text-dark flex flex-col sm:flex-row sm:items-center w-10/12 h-auto rounded-2xl m-4 md:flex-col md:h-fit md:max-h-96 border border-gold shadow-card-shadow overflow-y-scroll scrollbar-hidden;
+        @apply bg-gold text-dark flex flex-col sm:flex-row sm:items-center w-10/12 h-auto rounded-2xl m-4 md:flex-col md:h-fit border border-gold shadow-card-shadow overflow-y-scroll scrollbar-hidden;
     }
 
     .card img {
@@ -28,11 +28,21 @@
         @apply block bg-dark rounded-full p-2 m-1 font-bold text-gold text-xl hover:underline text-center w-52 cursor-pointer
     }
 
+    /*TODO: vérifier si pas possible de styliser plus généralement*/
+    .form-field-container {
+        @apply flex flex-col justify-center text-center items-center w-full bg-light
+    }
+
+    /*TODO: vérifier si pas possible de styliser plus généralement
+    form div div#booking_datetime {
+        @apply text-center
+    }
+*/
     .form-label {
         @apply font-sub-title text-dark text-3xl
     }
 
-    .form-input {
+    .form-input, .form-input-container div select {
         @apply m-3 border border-gold rounded-full p-2 text-dark
     }
 

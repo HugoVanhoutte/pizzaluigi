@@ -2,8 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Booking;
+use App\Form\BookingType;
 use App\Repository\BookingRepository;
 use App\Repository\ReviewRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -52,11 +55,25 @@ public function menu(): Response
      * Route for displaying the booking creation form
      * @return Response
      */
-    #[Route('/booking', name: 'app_booking', methods: ['GET'])]
-public function booking(): Response
+    #[Route('/booking', name: 'app_booking', methods: ['GET', 'POST'])]
+public function booking(
+    Request $request,
+    EntityManagerInterface $manager,
+
+    ): Response
     {
+        $booking = new Booking();
+        $form = $this->createForm(BookingType::class, $booking);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $booking = $form->getData();
+            $manager->persist($booking);
+            $manager->flush();
+        }
+
         return $this->render('booking.html.twig', [
-            'controller_name' => 'HomeController',
+            'form' => $form->createView(),
         ]);
     }
 

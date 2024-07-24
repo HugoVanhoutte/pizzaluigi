@@ -16,7 +16,7 @@ class AppFixtures extends Fixture
 
     public function __construct()
     {
-        $this->faker = Factory::create('fr-FR');
+        $this->faker = Factory::create('fr');
     }
 
     public function load(ObjectManager $manager): void

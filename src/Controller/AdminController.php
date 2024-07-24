@@ -11,9 +11,17 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+#[Route('/admin', name: 'admin_')]
 class AdminController extends AbstractController
 {
-    #[Route('/admin/bookings', name: 'admin_bookings', methods: ['GET'])]
+    /**
+     * Route displaying all bookings for admin uses
+     * @param BookingRepository $bookingRepository
+     * @param PaginatorInterface $paginator
+     * @param Request $request
+     * @return Response
+     */
+    #[Route('/bookings', name: 'bookings', methods: ['GET'])]
 public function adminBookings(BookingRepository $bookingRepository, PaginatorInterface $paginator, Request $request): Response
     {
         $bookings = $paginator->paginate(
@@ -26,7 +34,15 @@ public function adminBookings(BookingRepository $bookingRepository, PaginatorInt
             'bookings' => $bookings,
         ]);
     }
-#[Route('/admin/reviews', name: 'admin_reviews', methods: ['GET'])]
+
+    /**
+     * Route displaying all reviews for admin uses
+     * @param ReviewRepository $reviewRepository
+     * @param PaginatorInterface $paginator
+     * @param Request $request
+     * @return Response
+     */
+    #[Route('/reviews', name: 'reviews', methods: ['GET'])]
 public function adminReviews(ReviewRepository $reviewRepository, PaginatorInterface $paginator, Request $request): Response
 {
     $reviews = $paginator->paginate(
@@ -35,12 +51,19 @@ public function adminReviews(ReviewRepository $reviewRepository, PaginatorInterf
         100
     );
 
-    return $this->render('reviews.html.twig', [
+    return $this->render('admin/reviews.html.twig', [
         'reviews' => $reviews,
     ]);
 }
 
-#[Route('/admin/posts/read', name: 'admin_posts_read', methods: ['GET'])]
+    /**
+     * Route displaying all posts for admin uses
+     * @param PostRepository $postRepository
+     * @param PaginatorInterface $paginator
+     * @param Request $request
+     * @return Response
+     */
+    #[Route('/posts/read', name: 'posts_read', methods: ['GET'])]
 public function adminPostsRead(PostRepository $postRepository, PaginatorInterface $paginator, Request $request): Response
 {
     $posts = $paginator->paginate(
@@ -54,7 +77,12 @@ public function adminPostsRead(PostRepository $postRepository, PaginatorInterfac
     ]);
 }
 
-#[Route('/admin/posts/create', name: 'admin_posts_create', methods: ['GET'])]
+    /**
+     * Route to post creation form
+     * @param PostRepository $postRepository
+     * @return Response
+     */
+    #[Route('/posts/create', name: 'posts_create', methods: ['GET'])]
 public function adminPostsCreate(PostRepository $postRepository): Response
 {
     return $this->render('admin/posts_create.html.twig');
