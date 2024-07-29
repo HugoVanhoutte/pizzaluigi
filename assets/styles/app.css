@@ -28,16 +28,10 @@
         @apply block bg-dark rounded-full p-2 m-1 font-bold text-gold text-xl hover:underline text-center w-52 cursor-pointer
     }
 
-    /*TODO: vérifier si pas possible de styliser plus généralement*/
     .form-field-container {
         @apply flex flex-col justify-center text-center items-center w-full bg-light
     }
 
-    /*TODO: vérifier si pas possible de styliser plus généralement
-    form div div#booking_datetime {
-        @apply text-center
-    }
-*/
     .form-label {
         @apply font-sub-title text-dark text-3xl
     }
@@ -48,7 +42,8 @@
 
     .form-input:focus-visible {
         outline-color: #C5AB6B;
-        /* Gold color (not working with css variable) */
+        /* Gold color variable (not working with css variable) */
+
     }
 
     textarea.form-input {

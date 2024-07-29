@@ -12,7 +12,6 @@ use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints as Assert;
 
 class BookingType extends AbstractType
 {
@@ -22,11 +21,11 @@ class BookingType extends AbstractType
         $today = new \DateTime();
         $builder
             ->add('datetime', DateTimeType::class, [
+                'label' => 'Date et heure d\'arrivé',
                 'attr' => [
                     'class' => 'form-input-container'
                 ],
                 'data' => $today,
-                'label' => 'Date et heure d\'arrivé',
                 'label_attr' => [
                     'class' => 'form-label'
                 ],
@@ -35,9 +34,6 @@ class BookingType extends AbstractType
                 'hours' => range($today->format('H'), 23),
                 'minutes' => [00, 30],
                 'years' => range(intval($today->format('Y')), intval($today->format('Y')) +1),
-                'constraints' => [
-                    new Assert\NotBlank(message: 'Champs obligatoire'),
-                ]
             ])
 
             ->add('name', TextType::class, [
@@ -50,11 +46,6 @@ class BookingType extends AbstractType
                 'label_attr' => [
                     'class' => 'form-label'
                 ],
-                'constraints' => [
-                    new Assert\NotBlank(message: 'Champs obligatoire'),
-                    new Assert\Length(['min' => 2, 'max' => 25]),
-                    new Assert\Type(type: 'alpha')
-                ]
             ])
 
             ->add('email', EmailType::class, [
@@ -65,10 +56,6 @@ class BookingType extends AbstractType
                 'label_attr' => [
                     'class' => 'form-label'
                 ],
-                'constraints' => [
-                    new Assert\NotBlank(),
-                    new Assert\Email(message: 'Veuillez enter une adresse e-mail valide')
-                ]
             ])
 
             ->add('phone', TelType::class, [
@@ -79,11 +66,6 @@ class BookingType extends AbstractType
                 'label_attr' => [
                     'class' => 'form-label'
                 ],
-                'constraints' => [
-                    new Assert\NotBlank(message: 'Champs obligatoire'),
-                    new Assert\Length(['max' => 15]),
-                    new Assert\Type(type: 'digit')
-                ]
             ])
 
             ->add('guests', ChoiceType::class, [

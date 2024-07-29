@@ -1,31 +1,29 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    Luigi's Pizza | Administration - Nouveautés
+    Luigi's Pizza | Administration - Avis
 {% endblock %}
 
 {% block body %}
     <div id="container" class="flex flex-col">
-        {% include 'admin/partials/_menu.html.twig' %}
-        {% include 'admin/partials/posts_menu.html.twig' %}
 
 
         <div class="form-container">
             {{ form_start(form) }}
             <div class="form-field-container">
-                {{ form_label(form.title) }}
-                {{ form_errors(form.title) }}
-                {{ form_widget(form.title) }}
+                {{ form_errors(form.name) }}
+                {{ form_label(form.name) }}
+                {{ form_widget(form.name) }}
             </div>
             <div class="form-field-container">
-                {{ form_label(form.content) }}
                 {{ form_errors(form.content) }}
+                {{ form_label(form.content) }}
                 {{ form_widget(form.content) }}
             </div>
             <div class="form-field-container">
-                {{ form_label(form.picture) }}
-                {{ form_errors(form.picture) }}
-                {{ form_widget(form.picture) }}
+                {{ form_errors(form.note) }}
+                {{ form_label(form.note) }}
+                {{ form_widget(form.note) }}
             </div>
             <div>
                 {{ form_row(form.submit) }}

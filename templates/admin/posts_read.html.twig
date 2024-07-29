@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
 
+
 {% block title %}
     Luigi's Pizza | Administration - Nouveautés
 {% endblock %}
@@ -31,8 +32,8 @@
                     <td>{{ post.content }}</td>
                     <td>{{ post.picture }}</td>
                     <td class="text-center">
-                        <a href="#" class="text-red-600 m-5 hover:text-red-400"><i class="fa-solid fa-trash fa-xl hover:fa-fade"></i></a>
-                        <a href="#" class="text-indigo-500 m-5 hover:text-indigo-300"><i class="fa-solid fa-pen fa-xl hover:fa-beat"></i></a></td>
+                        <a href="{{ path('admin_posts_delete', {id: post.id}) }}" class="text-red-600 m-5 hover:text-red-400"><i class="fa-solid fa-trash fa-xl hover:fa-fade"></i></a>
+                        <a href="{{ path('admin_posts_edit', {id: post.id}) }}" class="text-indigo-500 m-5 hover:text-indigo-300"><i class="fa-solid fa-pen fa-xl hover:fa-beat"></i></a></td>
                 </tr>
             {% endfor %}
         </table>

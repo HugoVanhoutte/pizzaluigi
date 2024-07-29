@@ -1,3 +1,4 @@
+
 <header class="md:bg-dark bg-transparent text-gold flex flex-col md:flex-row sticky top-0  justify-around w-full md:space-x-48">
     <div class="flex flex-row md:flex-col justify-between items-center bg-dark">
         <a class="w-32 h-auto mt-2 mb-2" href="{{ path('app_landing') }}" >
@@ -10,8 +11,14 @@
     </div>
     <nav class="md:flex md:flex-row w-full md:w-4/12 items-center hidden flex-col bg-dark md:bg-dark">
         <a href="{{ path('app_menu') }}" class="hover:decoration-1 hover:underline text-2xl font-text w-full text-center md:w-4/12">Menu</a>
-        <a href="{{ path('app_reviews') }}" class="hover:decoration-1 hover:underline text-2xl font-text w-full text-center md:w-4/12">Avis</a>
-        <a href="{{ path('app_booking') }}" class="hover:decoration-1 hover:underline text-2xl font-text w-full text-center md:w-4/12 shrink-0">Réservation</a>
+        <a href="{{ path('app_reviews_create') }}" class="hover:decoration-1 hover:underline text-2xl font-text w-full text-center md:w-4/12">Avis</a>
+        <a href="{{ path('app_booking') }}" class="hover:decoration-1 hover:underline text-2xl font-text w-full text-center md:w-4/12 shrink-0">Réserver</a>
     </nav>
 </header>
+
+{% for message in app.flashes('success') %}
+    <div class="w-full text-center font-sub-title bg-green-500 text-dark text-xl">
+        {{ message }}
+    </div>
+{% endfor %}
 <script src="{{ asset('js/burger-menu.js') }}"></script>

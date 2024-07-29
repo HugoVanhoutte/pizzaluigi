@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Booking;
+use App\Entity\Review;
 use App\Form\BookingType;
+use App\Form\ReviewType;
 use App\Repository\BookingRepository;
 use App\Repository\ReviewRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -53,13 +55,14 @@ public function menu(): Response
 
     /**
      * Route for displaying the booking creation form
+     * @param Request $request
+     * @param EntityManagerInterface $manager
      * @return Response
      */
     #[Route('/booking', name: 'app_booking', methods: ['GET', 'POST'])]
 public function booking(
     Request $request,
     EntityManagerInterface $manager,
-
     ): Response
     {
         $booking = new Booking();
@@ -70,6 +73,12 @@ public function booking(
             $booking = $form->getData();
             $manager->persist($booking);
             $manager->flush();
+
+            $this->addFlash(
+                'success', 'Resérvation enregistrée avec success !'
+            );
+
+            return $this->redirectToRoute('app_landing');
         }
 
         return $this->render('booking.html.twig', [
@@ -84,8 +93,11 @@ public function booking(
      * @param Request $request
      * @return Response
      */
-    #[Route('/reviews', name: 'app_reviews', methods: ['GET'])]
-public function notes(ReviewRepository $reviewRepository, PaginatorInterface $paginator, Request $request): Response
+    #[Route('/reviews', name: 'app_reviews_read', methods: ['GET'])]
+public function notes(ReviewRepository $reviewRepository,
+                      PaginatorInterface $paginator,
+                      Request $request
+    ): Response
     {
         $reviews = $paginator->paginate(
             $reviewRepository->findAll(),
@@ -98,4 +110,29 @@ public function notes(ReviewRepository $reviewRepository, PaginatorInterface $pa
         ]);
     }
 
+    #[Route('/reviews/create', name: 'app_reviews_create', methods: ['GET', 'POST'])]
+public function reviewCreate(
+    Request $request,
+    EntityManagerInterface $manager
+    ): Response
+    {
+        $review = new Review();
+        $form = $this->createForm(ReviewType::class, $review);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $booking = $form->getData();
+            $manager->persist($booking);
+            $manager->flush();
+
+            $this->addFlash(
+                'success', 'Avis enregistré avec success !'
+            );
+
+            return $this->redirectToRoute('app_reviews_read');
+        }
+
+        return $this->render('reviews_create.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
 }
